@@ -41,9 +41,6 @@ router.post('/update/:id', async (req, res) => {
         const product = await Product.findById(id);
         if (!product) return res.status(404).json({ message: 'Product not found' });
 
-        if(req.user.userId.toString() !== product.createdBy.toString()) {
-            return res.status(403).json({ message: 'You are not authorized to update this product' });
-        }
 
         // Update product fields
         product.name = name || product.name;
@@ -69,9 +66,7 @@ router.post('/delete/:id', async (req, res) => {
         const product = await Product.findByIdAndDelete(id);
         if (!product) return res.status(404).json({ message: 'Product not found' });
 
-        if(req.user.userId.toString() !== product.createdBy.toString()) {
-            return res.status(403).json({ message: 'You are not authorized to delete this product' });
-        }
+
         
         res.status(200).json({ message: 'Product deleted successfully' });
     } catch (err) {
@@ -82,7 +77,7 @@ router.post('/delete/:id', async (req, res) => {
 //get all products
 router.get('/all', async (req, res) => {
     try {
-        const products = await Product.find({createdBy: req.user.userId}).sort({ createdAt: -1 });
+        const products = await Product.find().sort({ createdAt: -1 });
         res.status(200).json(products);
     } catch (err) {
         res.status(500).json({ message: err.message });

@@ -72,13 +72,12 @@ router.post('/add', async (req, res) => {
     }
 });
 
-
 //update product quantity in cart
 router.post('/update', async (req, res) => {
     try {
         const { productId, quantity } = req.body;
 
-        if (!productId || !quantity) {
+        if (!productId || quantity === undefined) {
             return res.status(400).json({ message: 'Product ID and quantity are required' });
         }
 

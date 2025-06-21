@@ -7,9 +7,6 @@ const mongoose = require('mongoose');
 const adminMiddleWare = require('./Middleware/admin.middleware');
 const userMiddleware = require('./Middleware/user.middleware');
 
-const userAPI = require('./API/userAuth');
-
-
 
 let appSetup = () => {
     const corsOptions = {
@@ -37,10 +34,13 @@ let mongoConnect = () => {
 
 
 let connectAPIS = () => {
-  app.use('/user', userAPI);
+  app.use('/user', require('./API/userAuth'));
   app.use('/admin/product', adminMiddleWare,require('./API/admin/products'));
   app.use('/user/products', require('./API/users/products'));
   app.use('/user/cart', userMiddleware, require('./API/users/cart'));
+
+  app.use('/user/orders', userMiddleware, require('./API/users/orders'));
+  app.use('/admin/orders', adminMiddleWare, require('./API/admin/orders'));
 }
 
 appSetup();
