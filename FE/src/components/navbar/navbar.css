@@ -1,0 +1,134 @@
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:80px;
+    
+    padding: 0 2rem;
+    background-color: rgb(39, 39, 39);
+    color:white; 
+}
+
+
+
+.nav-container{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+
+.search-input {
+    width: 300px;
+    background: #fff;
+    color: #222;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s;
+    border-radius: 10px 0px 0px 10px !important;
+    
+}
+
+.search-btn{
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #646cff91;
+}
+
+.search-btn:hover{
+    border:0px;
+}
+
+.search-btn:focus,
+.search-btn:focus-visible {
+  outline: 2px auto -webkit-focus-ring-color;
+}
+
+
+.search-input:focus {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.74);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+
+.nav-btn{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+    padding:0.8rem;
+}
+
+
+/* Modal Stying */
+
+
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    color: #222;
+    padding: 1rem;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+}
+
+.modal-header{
+    width: 25px;
+    height: 30px;
+    margin-left:auto;
+    margin-right:0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body{
+    padding:1rem;
+}
+
+.modal-close{
+    height: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    transition: 0.2s ease;
+}
+
+
+.modal-close:hover{
+    background-color: #222;
+    color: #fff;
+}
+
+
+/* Modal Styling Ends */ 

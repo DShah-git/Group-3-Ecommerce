@@ -12,7 +12,8 @@ router.get('/list', async (req, res) => {
             .skip((page - 1) * limit)
             .limit(limit);
         const totalCount = await Product.countDocuments();
-        res.status(200).json({ products, totalCount });
+        const pageCount = Math.ceil(totalCount / limit);
+        res.status(200).json({ products, totalCount, pageCount });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -57,7 +58,8 @@ router.get('/filter', async (req, res) => {
             .skip((page - 1) * limit)
             .limit(limit);
         const totalCount = await Product.countDocuments(filter);
-        res.status(200).json({ products, totalCount });
+        const pageCount = Math.ceil(totalCount / limit);
+        res.status(200).json({ products, totalCount, pageCount });
 
     } catch (err) {
         res.status(500).json({ message: err.message });

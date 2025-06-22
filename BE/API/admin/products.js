@@ -31,6 +31,36 @@ router.post('/create', async (req, res) => {
     }
 });
 
+
+//create multiple products
+router.post('/create-multiple', async (req, res) => {
+    try {
+        let products = req.body.products;
+        const createdBy = req.user.userId;
+
+       
+
+        products = products.map(item => {
+            return {
+                "name":item.name,
+                "images":item.images,
+                "description":   item.description,
+                "price":    item.price,
+                "category":    item.category,
+                "stock":    item.stock,
+                "createdBy" :createdBy
+            };
+        });
+        
+        let saved = Product.insertMany(products)
+        
+        res.status(201).json({ message: 'All Products created successfully', "products":saved });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+
 //update product
 router.post('/update/:id', async (req, res) => {
     try {
