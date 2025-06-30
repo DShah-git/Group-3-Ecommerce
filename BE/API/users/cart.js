@@ -24,7 +24,7 @@ router.post('/add', async (req, res) => {
         const { product, quantity } = req.body;
 
         if (!product || !quantity) {
-            return res.status(400).json({ message: 'Product ID and quantity are required' });
+            return res.status(400).json({ message: 'Product and quantity are required' });
         }
 
         //find cart of the user

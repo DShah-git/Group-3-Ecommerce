@@ -1,0 +1,89 @@
+.products-container {
+    margin-top: 7rem;
+}
+
+.admin-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(34, 40, 49, 0.08);
+
+}
+
+
+
+.admin-products-table th,
+.admin-products-table td {
+    padding: 0.5rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid #e3e4e6;
+}
+
+.admin-products-table th {
+    background: #f5f6fa;
+    color: #23272f;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+}
+
+.admin-products-table tr:last-child td {
+    border-bottom: none;
+}
+
+.actions-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.page-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.create-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.admin-btn {
+    padding: 0.4rem 0.75rem;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.view-btn {
+    background: #d8d887;
+    color: #23272f;
+}
+
+.edit-btn {
+    background: #e3e4e6;
+    color: #23272f;
+}
+
+.edit-btn:hover {
+    background: #d1d5db;
+}
+
+.delete-btn {
+    background: #ffdada;
+    color: #b12704;
+}
+
+.delete-btn:hover {
+    background: #ffb3b3;
+}

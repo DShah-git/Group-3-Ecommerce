@@ -16,18 +16,9 @@ export function getUserNameFromToken() {
   }
 }
 
-/**
- * Save auth token to localStorage
- * @param {string} token
- */
+
 export function setToken(token) {
   localStorage.setItem('token', token);
-}
-
-
-
-export function getUserRoleFromToken() {
-  
 }
 
 

@@ -107,8 +107,16 @@ router.post('/delete/:id', async (req, res) => {
 //get all products
 router.get('/all', async (req, res) => {
     try {
-        const products = await Product.find().sort({ createdAt: -1 });
-        res.status(200).json(products);
+        if(!req.query.page) {return res.status(400).json({"message":"Page is required"})}
+        const { page = 1, limit = 20 } = req.query;
+        
+        const products = await Product.find()
+            .sort({ createdAt: -1 })
+            .skip((page - 1) * limit)
+            .limit(limit);
+        const totalCount = await Product.countDocuments();
+        const pageCount = Math.ceil(totalCount / limit);
+        res.status(200).json({ products, totalCount, pageCount });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

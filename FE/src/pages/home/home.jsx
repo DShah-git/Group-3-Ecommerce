@@ -25,6 +25,7 @@ export default function Home() {
         setProducts(res.data.products);
         setPageCount(res.data.pageCount);
         setTotalCount(res.data.totalCount)
+        console.log(res.data.products)
       })
       .finally(() => setLoading(false));
   }, [page]);
@@ -64,10 +65,13 @@ export default function Home() {
                     ${product.price}
                   </div>
                   <div className="product-category">
-                   {product.category.join(', ')}
+                   {
+                    product.category.map(c=>(
+                        <div className="tag">{c}</div>
+                    ))
+                   }
                   </div>
                 </div>
-                
                 
               </div>
             ))}

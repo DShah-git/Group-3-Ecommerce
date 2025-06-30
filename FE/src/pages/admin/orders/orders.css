@@ -1,0 +1,53 @@
+.admin-orders-container{
+    margin-top:7rem;
+}
+
+
+.fulfill-btn{
+    border:2px solid rgb(1, 149, 1);
+    background-color: rgba(1, 149, 1, 0.406);
+    color:white;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+}
+
+
+.fulfill-btn:hover{
+    border: 2px solid rgb(1, 149, 1);
+     background-color: rgba(1, 149, 1, 0.628);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(34, 40, 49, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-dialog {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(34,40,49,0.18);
+  padding: 2rem 2.5rem;
+  min-width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: modalIn 0.18s cubic-bezier(.4,0,.2,1);
+}
+@keyframes modalIn {
+  from { transform: translateY(40px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.modal-dialog button {
+  min-width: 100px;
+}

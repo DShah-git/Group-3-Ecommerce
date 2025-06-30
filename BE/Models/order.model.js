@@ -13,6 +13,8 @@ const orderSchema = new mongoose.Schema({
     ],
     total: { type: Number, required: true, min: 0 },
     isFulfilled: { type: Boolean, default: false },
+    address:{type:Object, required:true},
+    paymentDetails:{type:Object,required:true},
     paymentStatus: {
         type: String,
         enum: [ 'paid', 'failed', 'refunded'],

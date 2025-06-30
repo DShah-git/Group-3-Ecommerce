@@ -6,7 +6,7 @@ const router = express.Router();
 //paginated product list along with total count
 router.get('/list', async (req, res) => {
     try {
-        const { page = 1, limit = 10 } = req.query;
+        const { page = 1, limit = 20 } = req.query;
         const products = await Product.find()
             .sort({ createdAt: -1 })
             .skip((page - 1) * limit)
@@ -22,9 +22,9 @@ router.get('/list', async (req, res) => {
 //filter products by category and search term, create paginated list
 router.get('/filter', async (req, res) => {
     try {
-        let { category  , searchTerm, page = 1, limit = 10 } = req.query;
+        let { category  , searchTerm, page = 1, limit = 20 } = req.query;
 
-        
+        console.log(category, searchTerm)
 
         if(!category ) {
             category = [];
@@ -32,6 +32,9 @@ router.get('/filter', async (req, res) => {
             category = category.split(',')
         }
 
+        
+
+      
         if(!searchTerm) {   
             return res.status(400).json({ message: 'Search term is required' });
         }
@@ -41,9 +44,11 @@ router.get('/filter', async (req, res) => {
 
 
         if (category.length == 0) {
-            filter = {
-                name: { $regex: searchTerm, $options: 'i' }
-            };
+            filter = { $or : [
+                {name: { $regex: searchTerm, $options: 'i' }},
+                {category:{$regex: searchTerm, $options: 'i'}}
+            ]
+        };
         }else{
             
             filter = {

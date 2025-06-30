@@ -1,0 +1,269 @@
+.cart-page {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2.5rem 2rem;
+  min-height: 70vh;
+
+  justify-content: center;
+}
+
+.cart-left {
+  flex: 7;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 2px 12px rgba(34,40,49,0.08);
+  min-width: 350px;
+  max-width: 900px;
+}
+
+.cart-right {
+  flex: 3;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 2px 12px rgba(34,40,49,0.08);
+  min-width: 260px;
+  max-width: 350px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e3e4e6;
+  padding: 1.2rem 0;
+  position: relative;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.quantity-container{
+    display: flex;
+    gap:1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cart-item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #23272f;
+}
+
+.cart-item-category {
+  color: #007185;
+  font-size: 0.98rem;
+}
+
+.cart-item-price {
+  color: #222831;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.cart-item-qtybox{
+    display: flex;
+    gap:0.5rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.607);
+    padding-inline:1rem;
+}
+
+.qty-btn {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:disabled {
+  background: #f3f4f6;
+  color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  min-width: 1.7rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cart-item-subtotal {
+  color: #888b92;
+  font-size: 0.98rem;
+  margin-top: 0.2rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #b12704;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding:0rem !important;
+  margin-top:0.5rem;
+  margin-left:0.5rem;
+}
+
+.remove-btn:hover {
+  color: #ff3b3b;
+}
+
+.cart-total-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.cart-subtotals-list {
+  width: 100%;
+  
+}
+.cart-subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #23272f;
+  margin-bottom: 0.3rem;
+}
+.cart-subtotal-name {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cart-subtotal-value {
+  font-weight: 500;
+}
+
+.cart-total-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #23272f;
+}
+
+.cart-total-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #b12704;
+}
+
+.clear-cart-btn, .checkout-btn {
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:0.5rem;
+}
+
+.clear-cart-btn {
+  background: #e3e4e6;
+  color: #23272f;
+  margin-top:1rem;
+}
+.clear-cart-btn:hover {
+  background: #d1d5db;
+}
+
+.checkout-btn {
+  background: #14ff57;
+  color: #23272f;
+}
+
+
+.skeleton-cart {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(90deg, #ececec 25%, #f5f5f5 50%, #ececec 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.2s infinite linear;
+  border-radius: 12px;
+}
+
+
+h4{
+    padding:0;
+    margin:0.5rem 0rem;
+
+}
+
+
+.modal-content{
+    width: 400px; 
+}
+
+
+.checkout-form{
+    width: 80%;
+    padding:1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+.form-group{
+    display: flex;
+    gap:0.5rem;
+    width: 100%;
+}
+
+
+.form-group > .checkout-input{
+    width: 100%;
+}
+
+.checkout-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  border: 1.5px solid #c3c6ce;
+  font-size: 1rem;
+  background: #f5f6fa;
+  color: #222831;
+  outline: none;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+

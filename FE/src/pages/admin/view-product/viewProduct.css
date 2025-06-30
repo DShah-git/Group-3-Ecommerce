@@ -1,0 +1,38 @@
+.product-stock {
+    font-size: 1.2rem;
+}
+
+.actions {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    margin-top:2rem;
+}
+
+.actions button {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.edit-btn {
+    background: #e3e4e6;
+    color: #23272f;
+    border: 2px solid #23272f;
+}
+
+.edit-btn:hover {
+    background: #d1d5db;
+}
+
+.delete-btn {
+    background: #ffdada;
+    color: #b12704;
+    border: 2px solid #b12704;
+}
+
+.delete-btn:hover {
+    background: #ffb3b3;
+}

@@ -13,11 +13,16 @@ router.post('/create', async (req, res) => {
             return res.status(404).json({ message: 'Cart not found' });
         }
 
+        let address = req.body.address
+        let paymentDetails = req.body.payment_details
+
         const order = new Order({
             userId: req.user.userId,
             products: cart.products,
             total: cart.totalPrice,
             isFulfilled: false,
+            address:address,
+            paymentDetails:paymentDetails,
             paymentStatus: 'paid',
             isCancelled: false
         });

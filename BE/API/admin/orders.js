@@ -7,10 +7,21 @@ const router = express.Router();
 //get paginated orders for admin
 router.get('/all-orders', async (req, res) => {
     try {
-        const { page = 1, limit = 25 } = req.query;
+        const { page = 1, limit = 25, filter = "pending" } = req.query;
         const skip = (page - 1) * limit;
 
-        const orders = await Order.find()
+        let filterQuery = {}
+
+        if(filter=="pending"){
+            filterQuery = { isCancelled: { $ne: true}, isFulfilled:{ $ne: true}  }
+        }else if(filter =="fulfilled"){
+            filterQuery = { isFulfilled: true }
+        }else if(filter == "cancelled"){
+            filterQuery = {isCancelled: true}
+        }
+
+        const orders = await Order.find(filterQuery)
+            .select('-paymentDetails')
             .sort({ createdAt: -1 })
             .skip(skip)
             .limit(Number(limit));
@@ -27,6 +38,9 @@ router.get('/all-orders', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
+
+
 
 //mark order as fulfilled
 router.post('/fulfill/:id', async (req, res) => {

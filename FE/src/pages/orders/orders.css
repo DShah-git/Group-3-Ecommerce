@@ -1,0 +1,120 @@
+.orders-dropdown {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1.5px solid #c3c6ce;
+  font-size: 1rem;
+  background: #f5f6fa;
+  color: #222831;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(34,40,49,0.06);
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.orders-dropdown:focus,
+.orders-dropdown:hover {
+  border-color: #23272f;
+  background: #f0f1f4;
+  box-shadow: 0 4px 16px rgba(34,40,49,0.13);
+}
+
+.orders-page {
+  padding: 2rem;
+  min-height: 100vh;
+}
+.orders-title {
+  margin-bottom: 2rem;
+  color: #23272f;
+}
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.order-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(34,40,49,0.08);
+}
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  padding:1rem 1.5rem;
+  border-radius: 12px;
+  background-color: #222831;
+   color: #888b92;
+ 
+}
+.order-id {
+  font-weight: 300;
+  font-size: 0.7rem;
+  text-align: right;
+}
+.order-status {
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: right;
+}
+.order-status.cancelled {
+  color: #b12704;
+}
+.order-status.fulfilled {
+  color: #228B22;
+}
+.order-status.pending {
+  color: #e6a700;
+}
+
+.order-body{
+    padding:1.5rem;
+}
+.order-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  
+}
+.order-product {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  min-width: 180px;
+}
+.order-product-name {
+  font-weight: 600;
+  color: #23272f;
+}
+.order-product-qty,
+.order-product-price {
+  color: #888b92;
+  font-size: 0.98rem;
+}
+.order-total {
+  font-weight: 700;
+  color: #b12704;
+  margin-bottom: 0.5rem;
+}
+.order-address {
+  color: #23272f;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cancel-order-btn {
+  background: #fff0f0;
+  color: #b12704;
+  border: 1.5px solid #b12704;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.cancel-order-btn:hover {
+  background: #ffeaea;
+  color: #fff;
+  background-color: #b12704;
+}

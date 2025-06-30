@@ -1,0 +1,79 @@
+.edit-product-form {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(34,40,49,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width:100%;
+}
+.edit-product-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #23272f;
+  gap: 0.5rem;
+}
+.edit-product-form input,
+.edit-product-form textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid #e3e4e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8f9fb;
+  transition: border 0.2s;
+  color:black;
+}
+.edit-product-form input:focus,
+.edit-product-form textarea:focus {
+  border: 1.5px solid #6c63ff;
+  outline: none;
+}
+.edit-product-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.edit-product-form button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.edit-btn {
+  background: #e3e4e6;
+  color: #23272f;
+}
+.edit-btn:hover {
+  background: #d1d5db;
+}
+
+.half{
+    width: 40%;
+}
+
+.categories{
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+
+.cat-tag{
+    padding:0.25rem 0.65rem !important;
+}
+
+p{
+    padding:0;
+    margin:0;
+}
+
+.butn-del{
+    transition: 0.3s ease;
+}
+
+.butn-del:hover{
+    scale:1.2
+}

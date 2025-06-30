@@ -16,6 +16,7 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  max-width: 300px;
 }
 
 .image-container{
@@ -38,13 +39,14 @@
   width: 100%;
   margin:0.5rem;
   padding:0.25rem;
+
 }
 
 
 .product-name {
   color: #23272f;
   margin: 0rem 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -56,14 +58,16 @@
 .product-price {
   font-weight: bold;
   color: #222831;
-    margin: 0rem 0.5rem;
+  margin: 0rem 0.5rem;
 }
 
 .product-category {
   font-size: 0.9rem;
   color: #a0a4ab;
-  margin-bottom: 0.5rem;
-    margin: 0rem 0.5rem;
+  margin: 0.25rem 0.5rem;
+  display: flex;
+  gap:0.25rem;
+  max-width: 50%;
 }
 
 .pagination-controls {
@@ -72,6 +76,7 @@
   align-items: center;
   margin-top: 2rem;
   gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .pagination-btn {
@@ -94,4 +99,22 @@
 .pagination-info {
   margin: 0 1rem;
   color: #23272f;
+}
+
+.product-category{
+
+
+}
+
+
+.tag{
+  background-color: #222831a2;
+  color:white;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding:0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
